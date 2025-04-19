@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "gmail": {
+      "command": "node",
+      "args": [
+        "/Users/raghavareddy/mcp/Servers/gmail-mcp/dist/index.js",
+        "clinet_oauth_tokens",
+        "{\"token\":\"END USER TOKEN\",\"refresh_token\":\"END USER REFRESH TOKEN\",\"token_uri\":\"https://oauth2.googleapis.com/token\",\"client_id\":\"USER CLIENT ID\",\"client_secret\":\"USER CLIENT SECRET\",\"scopes\":[\"END USER SCOPES\"],\"access_token\":\"USER ACCESS TOKEN\",\"expiry_date\":\"END USER EXPIRY DATE\"}"
+      ]
+    }
+  }
+}
