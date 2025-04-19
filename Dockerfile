@@ -24,4 +24,4 @@ RUN chown -R node:node /app/calendar-data
 USER node
 
 # Start the server
-CMD ["node", "build/index.js"]
+CMD ["node", "dist/index.js"]
