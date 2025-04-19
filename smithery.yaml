@@ -6,16 +6,18 @@ startCommand:
     # JSON Schema defining the configuration options for the MCP.
     type: object
     required:
-      - gcpOauthKeysPath
-      - credentialsPath
+      - calendarOauthPath
+      - calendarCredentialsPath
     properties:
-      gcpOauthKeysPath:
+      calendarOauthPath:
         type: string
-        description: Path to the GCP OAuth keys JSON file
-      credentialsPath:
+        default: ~/.gmail-mcp/token.json
+        description: Path to the Google OAuth credentials file.
+      calendarCredentialsPath:
         type: string
-        description: Path to the stored credentials JSON file
+        default: ~/.gmail-mcp/credentials.json
+        description: Path where the OAuth tokens will be stored.
   commandFunction:
     # A function that produces the CLI command to start the MCP on stdio.
     |-
-    (config) => ({command:'node',args:['dist/index.js'],env:{GMAIL_OAUTH_PATH:config.gcpOauthKeysPath, GMAIL_CREDENTIALS_PATH:config.credentialsPath}})
+    (config) => ({ command: 'node', args: ['dist/index.js'], env: { CALENDAR_OAUTH_PATH: config.calendarOauthPath, CALENDAR_CREDENTIALS_PATH: config.calendarCredentialsPath } })
